@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // Estou criando a variável com a string da data.
+    let dataString = '17-05-2016';
+
+    // Estou separadando a string expecificando que a divisão é '-'
+    // e tranformando dataString em um array com os valores obtidos.
+    dataString = dataString.split('-');
+    console.log(dataString);
+
+    // Estou criando uma variável vazia para guardar numeros.
+    let x = '';
+
+    // Estou girando os números.
+    x = dataString[0]; // x == 17
+    dataString[0] = dataString[2]; // dataString[0] == 2016
+    dataString[2] = x; // dataString[2] == 17
+
+    // Estou criando uma data com o array que girei.
+    let data = new Date(dataString);
+    console.log(data);
+
+
+    //// Resolução do professor:
+
+    // Estou criando a str...
+    let dataString2 = '17-05-2016';
+
+    // Estou criando a data com o valor de dataString2 que sofreu
+    // modificações do .split que separou a string e tranformou seu valor
+    // em um array, usando o .reverse EU INVERTO A ORDEM DO array
+    // para então juntar tudo em uma string separada por '/',
+    // valor que o Date() aceita bem.
+    let data2 = new Date(dataString2.split('-').reverse().join('/'));
+    console.log(data2);
+
+
+
+    </script>
+  </body>
+</html>

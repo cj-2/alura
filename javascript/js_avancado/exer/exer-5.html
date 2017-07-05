@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //Estou criando um simples array
+    let lista1 = ['mamão', 'limão', 'abacate'];
+    console.log(lista1);
+
+    // Igualmente aqui.
+    let lista2 = ['abacaxi', 'laranja', 'morango'];
+    console.log(lista1);
+
+    // Estou usando o .push para jogar valores dentro do array lista1
+    // e usando o '...' spread operator faço com que não a lista2 entre
+    // para dentro de lista1 e sim os valores do array lista2[0], lista...
+    lista1.push(...lista2);
+    console.log(lista1);
+
+    </script>
+  </body>
+</html>

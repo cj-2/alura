@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Estou escrevendo um progama que cria uma lista de alunos com suas notas,
+      // nomes, matriculas e faz uma lista dos aprovados.
+
+      // Estou criando a classe aluno
+      class Aluno{
+        // Que recebe a matricula e o nome.
+        constructor(matricula, nome){
+          this.matricula = matricula;
+          this.nome = nome;
+        }
+      }
+      // Estou criando a classe prova que irá receber o resultado da class Aluno
+      // em aluno e uma nota para esse aluno.
+      // Ou seja, criei uma cadeia de classes em que uma utiliza da outra.
+      class Prova{
+        constructor(aluno, nota){
+          this.aluno = aluno;
+          this.nota = nota;
+        }
+      }
+
+      // Estou criando o array que adicionei 4 alunos criados pela classe Aluno
+      // primeiramente com os valores de matrícula e nome, e posteriomente
+      // pela classe Prova que absorve o valor gerado por Aluno (de uma forma
+      // que será de facil acesso acessar seus parâmetros) e a nota desse aluno.
+      var avaliacoes = [
+        new Prova(new Aluno(1, 'Luana'), 8),
+        new Prova(new Aluno(2, 'Cássio'), 6),
+        new Prova(new Aluno(3, 'Barnei'), 9),
+        new Prova(new Aluno(4, 'Bira'), 5)
+      ];
+
+      // Estou testando o acesso das informações do primeiro aluno do array.
+      console.log(avaliacoes[0].aluno.nome);
+
+      // Estou criando uma lista de aprovados que recebe o array avaliações
+      // filtrado por uma condição utilizando o .filter e mandando que apenas
+      // devolva os nomes dos alunos com o .map usando o return prova.aluno.nome
+      var aprovados = avaliacoes
+        .filter( function(prova){ return prova.nota >= 7; })
+        .map( function(prova){ return prova.aluno.nome; })
+      ;
+      console.log(aprovados);
+
+      //// Atividade utilizando o codigo assima subtitituindo as funções de call back por
+      //// arrow functions:
+
+      // Faz a mesma coisa que o exemplo de cima porem usando apenas arrow functions.
+      var aprovados2 = avaliacoes.filter((prova) => prova.nota >= 7).map((prova) => prova.aluno.nome);
+      console.log(aprovados2);
+
+    </script>
+  </body>
+</html>

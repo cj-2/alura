@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Pessoa{
+        constructor(nome, sobrenome, idade, estadoCivil){
+          this.nome = nome;
+          this.sobrenome = sobrenome;
+          this.idade = idade;
+          this.estadoCivil = estadoCivil;
+        }
+        dados(){
+          let resposta = `Nome: ${this.nome} ${this.sobrenome} Idade: ${this.idade} Estado Civil: ${this.estadoCivil}.`
+          return console.log(resposta);
+        }
+      }
+      let user = new Pessoa('Carlos Roberto', 'da Silva Júnior', 19, 'Solteiro');
+      user.dados();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text">
+    <button type="button" name="button">Enviar!</button>
+    <script type="text/javascript">
+
+      function imprimir(text)
+        {
+          document.write(text);
+        }
+
+      function sorteia()
+        {
+          return Math.round(Math.random() * 10);
+        }
+
+      function condicao()
+        {
+          erroCondicao = true;
+          for(var posicao = 0; posicao < 4 ; posicao++)
+            {
+              if (parseInt(recebe.value) == segredos[posicao])
+                {
+                  alert("Acertou!");
+                  erroCondicao = false;
+                  break;
+                }
+            }
+
+          if (erroCondicao)
+            alert("Errou.");
+
+          recebe.value = "";
+          recebe.focus;
+
+        }
+
+      function sorteiaLista(quant)
+        {
+          var arraySorteia = [];
+          var numero = 0;
+
+          // Uso a repetição para verificar e adicionar o numero o arraySorteia.
+          while (numero < quant)
+            {
+              // Atribuo a função "sorteia();" a variavel para facilitar leitura.
+              var nAleatorio = sorteia();
+              // Crio a variavel condicional para if que faz o push.
+              // (Dentro da repetição para que sempre retorne a true.).
+              var adicionar = true;
+
+              if(nAleatorio != 0)
+                {
+                  // Repito a verificação, e caso o nRandom seja igual algum numero da arraySorteia
+                  // o progama para a repetição e atribuo o valor false a variavel adicionar.
+                  for (var i = 0; i < arraySorteia.length; i++)
+                    {
+                      if (arraySorteia[i] == nAleatorio )
+                        {
+                          adicionar = false;
+                          break;
+                        }
+                    }
+
+                  // Se ainda adicionar estiver com o valor true, é adicionado o número ao arraySorteia;
+                  if(adicionar)
+                    {
+                        arraySorteia.push(nAleatorio);
+                        numero++;
+                    }
+                }
+
+            }
+          // Retorno o objetivo da função.
+          return arraySorteia;
+        }
+
+      var segredos = sorteiaLista(5);
+      console.log(segredos);
+      var recebe = document.querySelector("input");
+      recebe.focus();
+
+      var botao = document.querySelector("button");
+      botao.onclick = condicao;
+
+    </script>
+  </body>
+</html>

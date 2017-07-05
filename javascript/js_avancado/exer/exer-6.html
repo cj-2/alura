@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // Estou criando um array de números
+    let numeros = [3,2,11,20,8,7];
+    console.log(numeros);
+
+    // Estou atribuindo um novo valor a numeros que é o valor de numeros
+    // modificado .map que executa a seguinte função a cada posição do array:
+    // Se o numero da posição multiplo de 2 então o valor não será alterado.
+    // Se não o valor será multiplicado por 2.
+    numeros = numeros.map(function(numero, posicao){
+      if(numero % 2 == 0){
+        return numero;
+      }
+      return numero * 2;
+    });
+
+    console.log(numeros);
+    </script>
+  </body>
+</html>

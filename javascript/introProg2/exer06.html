@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- Tela para pintura -->
+    <canvas id="canvas" width="600" height="300"></canvas>
+    <script type="text/javascript">
+
+      function desenhaCirculo(x, y, cor)
+        {
+          pincel.fillStyle = cor;
+          pincel.beginPath();
+          pincel.arc(x, y, 15, 0, 2 * 3.14);
+          pincel.fill();
+        }
+
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+
+        pincel.fillStyle = "lightgray";
+        pincel.fillRect(0, 0, 600, 300);
+
+        desenhaCirculo(300, 150, "blue");
+        desenhaCirculo(300, 120, "red");
+        desenhaCirculo(270, 150, "yellow");
+        desenhaCirculo(300, 180, "green");
+        desenhaCirculo(330, 150, "orange");
+
+    </script>
+  </body>
+</html>

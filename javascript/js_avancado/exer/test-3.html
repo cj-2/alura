@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="formulario" onsubmit="data.info(event)">
+      <input type="date" required>
+      <button type="submit" name="button">Testar!</button>
+    </form>
+    <script type="text/javascript">
+    // Esse programa captura o valor do input data e transforma e uma data
+    // que a classe Date() consegue ler.
+
+    // Estou criando a classe DataTeste
+    class DataTeste {
+
+      // Estou guardando em cache no constructor o input que retorna o valor
+      // da data escrita.
+      constructor() {
+        this.input = document.querySelector('input');
+      }
+
+      // Estou criando um método que transforma o valor this.input em data
+      // do Date()
+      info(event){
+
+        // Estou me previnindo dos comportamentos padroes do formulário.
+        event.preventDefault();
+
+        // Eu posso muito bem imprimir a data correta usando o valor do this.input
+        // capturado pelo .value e separado em um array pelo .split('-')
+        console.log(new Date(this.input.value.split('-')));
+
+        // Ou dificulta-lo usando o spread operator:
+
+        // Estou criando uma variavel que recebe a classe Date(), que puxa o valor
+        // do input com o .value, o tranforma em um array com o .split() e
+        // o separo do array com o spread operator.
+        let dataCompleta = new Date(...this.input.value
+          .split('-')
+          // Como os números estão separados como se fossem definitos assim: Date("2012", '03', '27')
+          // graças ao spread operator, é necessario decrecentar 1 no mês pois
+          // quando definido assim o mês passa a ser contado de 0 a 11 e não mais
+          // como o convencional de 1 a 12.
+          .map(function(item, i){
+            // Se for o segundo numero na posição 1 (segundo numero)
+            if (i == 1){
+              // Decrecente 1
+              return --item;
+            }
+            // Caso contrário não há nenhuma alteração.
+            return item;
+          })
+        );
+        console.log(dataCompleta);
+      }
+    }
+
+    // Estou criando a variavel data.
+    let data = new DataTeste();
+
+    </script>
+  </body>
+</html>

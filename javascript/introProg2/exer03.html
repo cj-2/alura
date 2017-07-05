@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- Tela para pintura -->
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script type="text/javascript">
+      var tela = document.querySelector("canvas");
+      var pincel = tela.getContext("2d");
+
+      //Creeper
+      pincel.fillStyle = "black";
+      pincel.beginPath();
+      pincel.moveTo(0, 0);
+      pincel.lineTo(0, 400);
+      pincel.lineTo(400, 400);
+      pincel.fill();
+
+      pincel.fillStyle = "white";
+      pincel.beginPath();
+      pincel.moveTo(25, 75);
+      pincel.lineTo(25, 375);
+      pincel.lineTo(325, 375);
+      pincel.fill();
+
+
+    </script>
+  </body>
+</html>

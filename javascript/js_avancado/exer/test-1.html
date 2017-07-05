@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // Acho uma forma mais imútavel se criar a classe da seguinte forma:
+
+    // Estou criando a classe Hoje
+    class Hoje{
+
+      //Estou criando o constructor que recebe a temperatura.
+      constructor(temperatura){
+        this.temperatura = temperatura;
+
+        // Estou congelando os valores.
+        Object.freeze(this);
+      }
+
+      // Estou encapsulando o gerador de data Date() em um método de vizualização "get"
+      // para que não seja possível altera-lo.
+      get data(){
+        let dataCompleta = new Date();
+        return dataCompleta;
+      }
+    }
+
+    // Estou gerando uma data na variável hoje.
+    let hoje = new Hoje(20);
+
+    console.log(`A temperatura do dia ${hoje.data} é ${hoje.temperatura}`);
+
+    // Estou tentando alterar os valores.
+    hoje.data.setTime(2);
+    hoje.temperatura = 50;
+
+    // Resultado.
+    console.log(`A temperatura do dia ${hoje.data} é ${hoje.temperatura}`);
+    </script>
+  </body>
+</html>

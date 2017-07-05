@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text">
+    <button type="button" name="button">Enviar!</button>
+    <script type="text/javascript">
+
+    function imprimir(text)
+      {
+        document.write(text);
+      }
+
+    function condicao()
+      {
+        if (parseInt(recebe.value) == segredo)
+          alert("Acertou!");
+        else
+          alert("Errou.");
+
+        recebe.value = "";
+        recebe.focus;
+      }
+
+    var segredo = Math.round(Math.random() * 10);
+    console.log(segredo);
+    var recebe = document.querySelector("input");
+    recebe.focus();
+
+    var botao = document.querySelector("button");
+    botao.onclick = condicao;
+
+    </script>
+  </body>
+</html>

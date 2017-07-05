@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text">
+    <button type="button" name="button">Enviar!</button>
+    <script type="text/javascript">
+
+      function imprimir(text)
+        {
+          document.write(text);
+        }
+
+      function condicao()
+        {
+          erroCondicao = 1;
+          for(var posicao = 0; posicao < 4 ; posicao++)
+            {
+              if (parseInt(recebe.value) == segredos[posicao])
+                {
+                  alert("Acertou!");
+                  erroCondicao = 0;
+                  break;
+                }
+            }
+
+          if (erroCondicao)
+            alert("Errou.");
+
+          recebe.value = "";
+          recebe.focus;
+
+        }
+
+      var segredos = [5, 6, 9, 8, 10];
+      console.log(segredos);
+      var recebe = document.querySelector("input");
+      recebe.focus();
+
+      var botao = document.querySelector("button");
+      botao.onclick = condicao;
+    
+    </script>
+  </body>
+</html>

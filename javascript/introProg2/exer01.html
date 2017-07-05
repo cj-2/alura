@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- Tela para pintura -->
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script type="text/javascript">
+      // Determino qual será a tela.
+      var tela = document.querySelector("canvas");
+      // Ciro um pincel para pintar tela.
+      var pincel = tela.getContext("2d");
+
+      //Cor do Pincel.
+      pincel.fillStyle = "lightgray";
+      // Onde sera pintado respectivo: X, Y, Largura, Altura (Retângulo)
+      pincel.fillRect(0, 0, 600, 400);
+
+      pincel.fillStyle = "green";
+      pincel.fillRect(0, 0, 200, 400);
+
+      pincel.fillStyle = "red";
+      pincel.fillRect(400, 0, 200, 400);
+
+      pincel.fillStyle = "yellow";
+      // Criar um caminho para o pincel.
+      pincel.beginPath();
+      // Ponto inicial
+      pincel.moveTo(300, 200);
+      //La a linha para...
+      pincel.lineTo(200, 400);
+      pincel.lineTo(400, 400);
+      //Preenche o vazio com cor.
+      pincel.fill();
+
+      pincel.fillStyle = "blue";
+      // Começo outro caminho.
+      pincel.beginPath();
+      // Declaro que quero desenhar um circulo.
+      // Respectivo: X, Y, Raio, Ângulo Incial, Final (2 * 3.14)
+      pincel.arc(300, 200, 50, 0, 2 * 3.14);
+      pincel.fill();
+
+    </script>
+  </body>
+</html>

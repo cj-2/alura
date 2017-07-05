@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- Tela para pintura -->
+    <canvas id="canvas" width="400" height="250"></canvas>
+    <script type="text/javascript">
+      var tela = document.querySelector("canvas");
+      var pincel = tela.getContext("2d");
+
+      pincel.fillStyle = "green";
+      pincel.fillRect(0, 0, 400, 250);
+
+      pincel.fillStyle = "yellow";
+      pincel.beginPath();
+      pincel.moveTo(200, 25);
+      pincel.lineTo(25, 125);
+      pincel.lineTo(375, 125);
+      pincel.fill();
+
+      pincel.fillStyle = "yellow";
+      pincel.beginPath();
+      pincel.moveTo(25, 125);
+      pincel.lineTo(200, 225);
+      pincel.lineTo(375, 125);
+      pincel.fill();
+
+
+      pincel.fillStyle = "blue";
+      pincel.beginPath();
+      pincel.arc(200, 125, 55, 0, 2 * 3.14);
+      pincel.fill();
+
+
+
+
+    </script>
+  </body>
+</html>

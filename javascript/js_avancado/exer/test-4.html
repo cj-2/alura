@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Teste com a Arrow Function e .map
+
+      // Estou criando um array com 4 números.
+      let numeros = [20, 40, 60, 50];
+
+      // Estou lendo os valores do array.
+      console.log(numeros);
+
+      // Estou definindo que o array numeros irá receber o valor
+      // dele mesmo porém modificado pelo .map
+      //////////
+      // E usando um Arrow Function como callback,
+      // como é so um comando não há necessidade de usar o return.
+      numeros = numeros.map( (item) => item + 10 );
+
+      // Estou lendo novamate os valores do array no console.
+      console.log(numeros)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="numeros">30-90-224-423-7214-632-875624-125-9632565-45-42-4-77-3268-64-25425-75-36</p>
+    <script type="text/javascript">
+    // O progama pega todos os numeros do parágrafos e soma.
+
+    // Estou criando a clase números.
+    class Numeros{
+
+      // No constructor estou criando um "cache" o correspondente ao id="numeros"
+      // assim não é necessário invocalo sempre que for requisitado.
+      constructor(){
+        this.linha = document.querySelector('#numeros');
+      }
+
+      // Estou criando um método que soma os números do parágrafo.
+      somar(){
+        // Estou criando uma variável que recebe uma array do conteúdo de
+        // this.linha graças ao .textContent que acessa o conteúdo e o .split('-')
+        // que executa a tranformação da string em um array.
+        let numeros = this.linha.textContent.split('-');
+
+        // Estou criando uma variavel de apoio quer receberá o valor total da soma.
+        let total = 0;
+
+        // Estou crianodo uma repetição com o forEach que executa um for em todas
+        // as posiçãoes do array.
+        numeros.forEach(function(numero){
+
+          // Em que numero recebe o próprio valor em inteiro.
+          numero = parseInt(numero);
+
+          // E total recebe o valor que ja tem mais o valor inteiro da posição.
+          total += numero;
+        });
+        console.log(total);
+      }
+    }
+
+    // Estou criando a variavel somarNumeros e executando a soma acessando
+    // o método somarNumeros.somar()
+    let somarNumeros = new Numeros();
+    somarNumeros.somar();
+    </script>
+  </body>
+</html>

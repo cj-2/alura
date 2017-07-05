@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Negociacao {
+        constructor(data, quantidade, valor){
+          this._data = new Date(data.getTime());
+          this._quantidade = quantidade;
+          this._valor = valor;
+          Object.freeze(this);
+        }
+        get volume(){
+          return this._quantidade * this._valor;
+        }
+        get data(){
+          return new Date(this._data.getTime());
+        }
+        get quantidade(){
+          return this._quantidade;
+        }
+        get valor(){
+          return this._valor;
+        }
+      }
+      let negociacao = new Negociacao(new Date(), 15, 200);
+      // Não é tão imutavel assim.
+      // Ainda posso mudar a data com o:
+      // negociacao._data.setTime(20);
+      console.log(negociacao.data);
+      negociacao._data.setTime(20)
+      console.log(negociacao._data);
+    </script>
+  </body>
+</html>
